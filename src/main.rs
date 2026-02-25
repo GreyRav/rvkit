@@ -34,10 +34,9 @@ fn main() {
 
     match cli.command {
         Commands::New { board, name } => commands::new::run(&board, &name),
-        // Commands::Build => println!("Build..."),
-        Commands::Flash => println!("Flash..."),
         Commands::Monitor => println!("Monitor..."),
         Commands::Boards => commands::boards::run(),
         Commands::Build => commands::build::run(),
+        Commands::Flash => commands::flash::run(),
     }
 }

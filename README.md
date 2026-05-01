@@ -127,7 +127,7 @@ This project follows the [Zig community Code of Conduct](https://ziglang.org/com
 
 ## License
 
-MIT — see [LICENSE](https://claude.ai/chat/LICENSE)
+MIT — see [LICENSE](LICENSE)
 
 ---
 

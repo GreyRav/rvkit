@@ -1,6 +1,8 @@
 # rvkit
 
-> **Bare metal Zig, without the bare metal pain.**
+![CI](https://github.com/GreyRav/rvkit/actions/workflows/ci.yml/badge.svg)
+
+> **Rust + Zig CLI/TUI toolchain for RISC-V microcontroller development. Scaffold, build, flash, monitor.**
 
 rvkit is a CLI/TUI toolchain for Zig developers targeting RISC-V microcontrollers.  
 No more manual linker scripts, no more fighting your toolchain — just code, build, flash, monitor.
@@ -53,20 +55,41 @@ More boards coming — including custom **Open & Hack** boards.
 
 ## Installation
 
-### Prerequisites
+### Pre-built binaries (recommended)
 
-- [Rust stable](https://rustup.rs/)
-- [Zig](https://ziglang.org/download/)
-- `wlink` for CH32V003 : `cargo install wlink`
-- `esptool` for ESP32-C3 : `pip install esptool`
+Download the binary for your platform from the [latest release](https://github.com/GreyRav/rvkit/releases/latest):
 
-### Install rvkit
+| Platform | Binary |
+|----------|--------|
+| Linux x86_64 | `rvkit-linux-x86_64` |
+| Linux ARM64 | `rvkit-linux-aarch64` |
+| Windows x86_64 | `rvkit-windows-x86_64.exe` |
+| macOS Intel | `rvkit-macos-x86_64` |
+| macOS Apple Silicon | `rvkit-macos-aarch64` |
 
+**Linux / macOS:**
 ```bash
-cargo install rvkit
+chmod +x rvkit-*
+sudo mv rvkit-* /usr/local/bin/rvkit
 ```
 
-> rvkit will check for missing dependencies at startup and guide you through the installation.
+**Windows:**
+
+Rename the file to `rvkit.exe`, move it to a folder of your choice (e.g. `C:\Tools\rvkit\`), and add that folder to your PATH.
+
+### From source (for Rust developers)
+
+```bash
+git clone https://github.com/GreyRav/rvkit.git
+cd rvkit
+cargo install --path cli
+```
+
+### Verify installation
+
+```bash
+rvkit --version
+```
 
 ---
 
@@ -107,9 +130,9 @@ baud_rate = 115200
 
 ## Roadmap
 
-- [ ] Project scaffolding (CH32V003, ESP32-C3)
-- [ ] Build integration
-- [ ] Flash via wlink / esptool
+- [x] Project scaffolding (CH32V003, ESP32-C3)
+- [x] Build integration
+- [x] Flash via wlink / esptool
 - [ ] TUI serial monitor (ratatui)
 - [ ] `rvkit boards` command
 - [ ] Template auto-update
@@ -131,4 +154,4 @@ MIT — see [LICENSE](LICENSE)
 
 ---
 
-_rvkit is built with ❤️ and Rust by [Open & Hack](https://gitea.alfrere.eu/open-and-hack)_
+*rvkit is built with ❤️ in Rust and Zig by [Open & Hack](https://github.com/karagure)*

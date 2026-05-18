@@ -145,6 +145,7 @@ baud_rate = 115200
 - [ ] TUI serial monitor (ratatui)
 - [ ] `rvkit boards` command
 - [ ] Template auto-update
+- [ ] add dev board proposed by community (pico 2)
 - [ ] Custom Open & Hack boards support
 
 ---
